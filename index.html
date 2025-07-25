@@ -14,7 +14,41 @@
       text-align: center;
       padding-bottom: 60px;
       animation: fadeIn 1.5s ease;
-    }
+    }.slider-container {
+  position: relative;
+  max-width: 100%;
+  margin-top: 15px;
+  overflow: hidden;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.slider {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  width: 400%;
+}
+
+.slider img {
+  width: 100%;
+  flex-shrink: 0;
+}
+
+.prev, .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 24px;
+  background: rgba(0,0,0,0.4);
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.prev { left: 10px; }
+.next { right: 10px; }
 
     h1 {
       font-size: 50px;
@@ -101,5 +135,15 @@
   </div>
 
   <div class="footer">Made with love by Yash 💕</div>
+  <script>
+  let currentSlide = 0;
+  const slides = document.querySelector('.slider');
+  const totalSlides = slides.children.length;
+
+  function moveSlide(direction) {
+    currentSlide = (currentSlide + direction + totalSlides) % totalSlides;
+    slides.style.transform = `translateX(-${currentSlide * 100}%)`;
+  }
+  </script>
 </body>
 </html>
