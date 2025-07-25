@@ -26,7 +26,7 @@
 .slider {
   display: flex;
   transition: transform 0.5s ease-in-out;
-  width: 400%;
+  width: calc(100% * 5); /* Dynamic based on no. of images */
 }
 
 .slider img {
@@ -45,6 +45,7 @@
   padding: 10px;
   border-radius: 50%;
   cursor: pointer;
+  z-index: 2; /* bring arrows above images */
 }
 
 .prev { left: 10px; }
