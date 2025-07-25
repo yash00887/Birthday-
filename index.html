@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -33,45 +32,18 @@
       animation: fadeIn 2s ease;
     }
 
-    .slider-container {
-      position: relative;
-      width: 100%;
-      max-width: 1200px;
-      margin: 15px auto 0;
-      overflow: hidden;
+    img {
+      max-width: 100%;
       border-radius: 15px;
+      margin-top: 15px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.2);
     }
 
-    .slider {
-      display: flex;
-      transition: transform 0.5s ease-in-out;
+    p {
+      font-size: 20px;
+      line-height: 1.6;
+      margin-top: 10px;
     }
-
-    .slider img {
-      width: 100vw;
-      max-width: 100%;
-      height: 600px;
-      object-fit: contain;
-      flex-shrink: 0;
-    }
-
-    .prev, .next {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      font-size: 24px;
-      background: rgba(0,0,0,0.4);
-      color: white;
-      border: none;
-      padding: 10px;
-      border-radius: 50%;
-      cursor: pointer;
-      z-index: 2;
-    }
-
-    .prev { left: 10px; }
-    .next { right: 10px; }
 
     .footer {
       margin-top: 50px;
@@ -104,17 +76,7 @@
 
   <div class="section">
     <h2>Birthday Girl 👑</h2>
-    <div class="slider-container">
-      <div class="slider" id="slider">
-        <img src="slide1.jpg" alt="Slide 1">
-        <img src="slide2.jpg" alt="Slide 2">
-        <img src="slide3.jpg" alt="Slide 3">
-        <img src="slide4.jpg" alt="Slide 4">
-        <img src="slide5.jpg" alt="Slide 5">
-      </div>
-      <button class="prev" onclick="moveSlide(-1)">❮</button>
-      <button class="next" onclick="moveSlide(1)">❯</button>
-    </div>
+    <img src="navya-photo.jpg" alt="Birthday Girl Photo">
     <p><strong>Look at this gorgeous girl! 😍<br>Yeh sirf meri jaan hai 💖</strong></p>
   </div>
 
@@ -129,16 +91,5 @@
   </div>
 
   <div class="footer">Made with love by Yash 💕</div>
-
-  <script>
-    let currentSlide = 0;
-    const slides = document.getElementById('slider');
-    const totalSlides = slides.children.length;
-
-    function moveSlide(direction) {
-      currentSlide = (currentSlide + direction + totalSlides) % totalSlides;
-      slides.style.transform = `translateX(-${currentSlide * 100}vw)`;
-    }
-  </script>
 </body>
 </html>
